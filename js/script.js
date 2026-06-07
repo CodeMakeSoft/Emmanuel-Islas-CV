@@ -1,4 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // ==== COPIAR AL PORTAPAPELES ====
+    const copyableItems = document.querySelectorAll('.copyable');
+    copyableItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const textToCopy = item.getAttribute('data-clipboard');
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                item.classList.add('copied');
+                setTimeout(() => {
+                    item.classList.remove('copied');
+                }, 2000);
+            }).catch(err => {
+                console.error('Error al copiar: ', err);
+            });
+        });
+    });
+
     // ==== BOTÓN DE IMPRIMIR / PDF ====
     const printBtn = document.getElementById('print-btn');
     if (printBtn) {
