@@ -15,13 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ==== BOTÓN DE IMPRIMIR / PDF ====
-    const printBtn = document.getElementById('print-btn');
-    if (printBtn) {
-        printBtn.addEventListener('click', () => {
-            window.print();
-        });
-    }
+
 
     // ==== TOGGLE DE MODO OSCURO/CLARO ====
     const themeToggle = document.getElementById('theme-toggle');

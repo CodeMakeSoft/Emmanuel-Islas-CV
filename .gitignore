@@ -1,0 +1,12 @@
+# Archivos temporales de compilación LaTeX
+*.aux
+*.log
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.toc
+
+# Ignorar archivos temporales del sistema
+.DS_Store
+Thumbs.db

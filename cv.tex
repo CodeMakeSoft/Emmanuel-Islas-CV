@@ -1,0 +1,122 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=1.2cm]{geometry}
+\usepackage{fontspec}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{parskip}
+\usepackage[most]{tcolorbox}
+
+\linespread{1.15}
+
+\definecolor{accent}{HTML}{0369A1}
+\definecolor{accentlight}{HTML}{E0F2FE}
+\definecolor{bgcard}{HTML}{F8FAFC}
+\definecolor{bordercard}{HTML}{E2E8F0}
+\definecolor{textmain}{HTML}{0F172A}
+\definecolor{textmuted}{HTML}{475569}
+
+\hypersetup{colorlinks=true, linkcolor=accent, urlcolor=accent}
+
+\tcbset{
+    cvcard/.style={
+        enhanced,
+        colback=bgcard,
+        colframe=bordercard,
+        boxrule=1pt,
+        arc=6pt,
+        boxsep=2pt,
+        left=10pt, right=10pt, top=10pt, bottom=10pt,
+        drop shadow=bordercard!50!white
+    }
+}
+
+% Title format similar to the web version
+\titleformat{\section}{\large\bfseries\color{textmain}}{}{0em}{\MakeUppercase}[{\color{accent}\titlerule[2pt]}]
+\titlespacing{\section}{0pt}{0.2em}{1em}
+
+\begin{document}
+\pagestyle{empty}
+\color{textmain}
+
+% HEADER
+\begin{minipage}[c]{0.16\textwidth}
+    \begin{tikzpicture}
+        \clip[rounded corners=0.4cm] (0,0) rectangle (2.6,2.6);
+        \node[anchor=north, inner sep=0pt] at (1.3,2.6) {\includegraphics[width=2.6cm]{Emmanuel.jpg}};
+    \end{tikzpicture}
+\end{minipage}%
+\begin{minipage}[c]{0.84\textwidth}
+    {\Huge \bfseries Emmanuel Islas Lozada}\\[0.2em]
+    {\Large \color{accent} \bfseries Desarrollador de Software Junior}\\[0.3em]
+    {\normalsize \color{textmuted} Estudiante de Ingeniería en Software apasionado por C++, el desarrollo móvil con Flutter y la automatización en entornos Linux (CLI/Bash). Buscando mi primera oportunidad laboral para aportar valor, aplicar mis conocimientos técnicos y seguir creciendo en la creación de aplicaciones escalables.}\\[0.5em]
+    {\small 
+    \href{mailto:emax03736@gmail.com}{emax03736@gmail.com} ~|~ 
+    +52 771 370 1999 ~|~ 
+    \href{https://github.com/E33-a}{github.com/E33-a} ~|~ 
+    Pachuca de Soto, Hidalgo, MX}
+\end{minipage}
+
+\vspace{1.5em}
+
+\begin{minipage}[t]{0.48\textwidth}
+
+\begin{tcolorbox}[cvcard]
+\section*{Tecnologías}
+\textbf{Mobile \& Cloud:}\\
+{\color{textmuted} Flutter, Firebase, Dart, SQLite.}\\[0.6em]
+\textbf{Backend \& Lenguajes:}\\
+{\color{textmuted} C++, Java, Python, MySQL.}\\[0.6em]
+\textbf{Utilidades \& IT:}\\
+{\color{textmuted} Linux, CLI \& Bash, LaTeX / LuaLaTeX, Git \& GitHub, Regex, Soporte \& Mantenimiento PC.}\\[0.6em]
+\textbf{Habilidades Blandas:}\\
+{\color{accent}\bfseries Inglés B2}, {\color{textmuted} Comunicación \& Liderazgo, Resolución de Problemas, Aprendizaje Autodidacta, Atención al Detalle, Adaptabilidad Tecnológica, Pensamiento Lateral.}
+\end{tcolorbox}
+
+\vspace{1em}
+
+\begin{tcolorbox}[cvcard]
+\section*{Educación}
+\textbf{\large Ingeniería en Software}\\[0.1em]
+{\color{textmuted}Universidad Politécnica de Pachuca}\\[0.1em]
+{\color{accent} \bfseries Agosto 2024 — Presente (Grad. Mayo 2027)}
+
+\vspace{0.8em}
+\begin{tcolorbox}[enhanced, colback=accentlight, colframe=accent, boxrule=0pt, leftrule=4pt, arc=3pt, boxsep=0pt, left=8pt, right=8pt, top=6pt, bottom=6pt]
+\textbf{Disponibilidad para trabajo remoto a partir de Enero 2027.}
+\end{tcolorbox}
+\end{tcolorbox}
+
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\textwidth}
+
+\begin{tcolorbox}[cvcard]
+\section*{Proyectos Destacados}
+
+\textbf{\large SmartSync} \href{https://github.com/CodeMakeSoft/SS.git}{\normalsize [Ver GitHub]}\\[0.1em]
+{\color{accent} \bfseries Proyecto Principal}\\[0.2em]
+{\color{textmuted} Aplicación móvil escalable desarrollada con \textbf{Flutter} y \textbf{Firebase} utilizando arquitectura \textbf{Feature-First} y metodología \textbf{XP}. Implementa mapas interactivos y persistencia local para una experiencia fluida.}
+
+\vspace{1em}
+\textbf{\large Attune} \href{https://github.com/CodeMakeSoft/Attune.git}{\normalsize [Ver GitHub]}\\[0.1em]
+{\color{accent} \bfseries En Desarrollo}\\[0.2em]
+{\color{textmuted} Plataforma móvil con \textbf{Flutter} orientada a la gestión de servicios o contenido. Arquitectura modular y backend gestionado en \textbf{Firebase} (Autenticación y Base de Datos).}
+\end{tcolorbox}
+
+\vspace{1em}
+
+\begin{tcolorbox}[cvcard]
+\section*{Sobre Mí}
+{\color{textmuted}
+Soy estudiante de Ingeniería en Software de la Universidad Politécnica de Pachuca. Mis lenguajes favoritos para desarrollar son \textbf{C++} y \textbf{Java}, con los cuales disfruto programando lógica algorítmica y resolviendo problemas complejos. También me desarrollo en el área móvil con Flutter y tecnologías backend, además de tener experiencia práctica en el mantenimiento y soporte técnico de computadoras.
+
+Soy un apasionado de \textbf{Linux}, el cual es mi entorno principal de uso y desarrollo (especialmente distribuciones como Fedora, Arch, Ubuntu y Debian). Con un nivel de inglés B2 y una gran motivación por siempre seguir aprendiendo, busco mi primera oportunidad profesional como \textbf{Desarrollador Junior} para integrarme a un equipo y aportar valor técnico.
+}
+\end{tcolorbox}
+
+\end{minipage}
+
+\end{document}
