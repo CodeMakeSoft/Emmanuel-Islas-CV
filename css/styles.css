@@ -9,8 +9,18 @@
     --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
+[data-theme="dark"] {
+    --bg-main: #0f172a;
+    --bg-card: #1e293b;
+    --border-card: #334155;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent-color: #38bdf8;
+    --accent-light: #0c4a6e;
+}
+
 @media (prefers-color-scheme: dark) {
-    :root {
+    :root:not([data-theme="light"]) {
         --bg-main: #0f172a;
         --bg-card: #1e293b;
         --border-card: #334155;
@@ -33,6 +43,7 @@ body {
     color: var(--text-main);
     line-height: 1.6;
     min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
@@ -136,6 +147,7 @@ body {
     border: 1px solid var(--border-card);
     padding: 2rem;
     border-radius: 8px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .section-title {
@@ -177,6 +189,7 @@ body {
     border-radius: 4px;
     font-size: 0.85rem;
     color: var(--text-main);
+    transition: background-color 0.3s ease;
 }
 
 .skill-tag.highlight {
@@ -260,6 +273,7 @@ body {
     padding: 1rem;
     border-radius: 6px;
     border-left: 4px solid var(--accent-color);
+    transition: background-color 0.3s ease;
 }
 
 .highlight-box p {
@@ -279,6 +293,44 @@ body {
 .about-text strong {
     color: var(--text-main);
     font-weight: 500;
+}
+
+/* Floating Action Buttons */
+.fab-container {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    z-index: 100;
+}
+
+.fab {
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    color: var(--text-main);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: all 0.2s ease;
+}
+
+.fab:hover {
+    background: var(--accent-color);
+    color: #ffffff;
+    transform: translateY(-3px);
+}
+
+.fab svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
 }
 
 /* Responsive */
@@ -302,18 +354,21 @@ body {
 /* Print Styles */
 @media print {
     body {
-        background: #ffffff;
-        color: #000000;
+        background: #ffffff !important;
+        color: #000000 !important;
     }
     .section, .skill-tag, .highlight-box {
         background: transparent !important;
         border: 1px solid #e5e7eb;
-        color: #000;
+        color: #000 !important;
     }
     .header-content h1, .section-title, .timeline-item h3 {
-        color: #000;
+        color: #000 !important;
     }
     * {
         color: #000 !important;
+    }
+    .fab-container {
+        display: none !important;
     }
 }
